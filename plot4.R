@@ -21,10 +21,8 @@ plotData <- function() {
 	ts <- data[[4]]
 	gl <- data[[5]]
 	vl <- data[[6]]
-	gp <- data[[7]]
-	
-	#png("plot4.png", width = 480, height = 480, units = "px")
-	
+	gp <- data[[7]]	
+	png("plot4.png", width = 480, height = 480, units = "px")	
 	par(mfcol = c(2,2))
 	plot(ts, gl, type = "l", xlab = "" , ylab = "Global Active Power")
 	plot(ts, s1, type = "l", xlab = "" , ylab = "Energy sub metering")
@@ -33,7 +31,7 @@ plotData <- function() {
 	legend('topright', c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, col=c('black', 'red', 'blue'))	
 	plot(ts, vl, type = "l", xlab = "datetime" , ylab = "Voltage")
 	plot(ts, gp, type = "l", xlab = "datetime" , ylab = "Global_reactive_power")	
-	#dev.off()
+	dev.off()
 }
 
 plotData()
