@@ -7,4 +7,5 @@ getGlobalActivePower <- function() {
 
 plotGlobalActive <- function() {
 	gl <- getGlobalActivePower()
+	hist(gl, col = "red1", xlab = "Global Active Power (kilowats)", ylab = "Frequency", main = "Global Active Power")
 }
