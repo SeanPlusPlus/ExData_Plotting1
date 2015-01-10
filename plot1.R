@@ -5,7 +5,11 @@ getGlobalActivePower <- function() {
 	df$Global_active_power <- as.numeric(as.character(df$Global_active_power))		
 }
 
-plotGlobalActive <- function() {
+plotGlobalActivePower <- function() {
 	gl <- getGlobalActivePower()
-	hist(gl, col = "red1", xlab = "Global Active Power (kilowats)", ylab = "Frequency", main = "Global Active Power")
+	png("plot1.png", width = 480, height = 480, units = "px")
+	hist(gl, col = "red1", xlab = "Global Active Power (kilowats)", ylab = "Frequency", main = "Global Active Power")	
+	dev.off()
 }
+
+plotGlobalActivePower()
