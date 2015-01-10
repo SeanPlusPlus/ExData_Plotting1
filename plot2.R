@@ -12,7 +12,7 @@ plotGlobalActivePowerWithTime <- function() {
 	data <- getGlobalActivePowerWithTime()
 	gl <- data[[1]]
 	ts <- data[[2]]	
-	png("plot1.png", width = 480, height = 480, units = "px")
+	png("plot2.png", width = 480, height = 480, units = "px")
 	plot(ts, gl, type = "l", xlab = "" , ylab = "Global Active Power (kilowats)")
 	dev.off()
 }
