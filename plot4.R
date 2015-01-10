@@ -8,8 +8,9 @@ getData <- function() {
 	s3 <- df$Sub_metering_3 <- as.numeric(as.character(df$Sub_metering_3))
 	ts <- df$timestamp
 	gl <- df$Global_active_power <- as.numeric(as.character(df$Global_active_power))
-	vl <- df$Voltage <- as.numeric(as.character(df$Voltage))	
-	return(list(s1, s2, s3, ts, gl, vl))
+	vl <- df$Voltage <- as.numeric(as.character(df$Voltage))
+	gp <- df$Global_reactive_power <- as.numeric(as.character(df$Global_reactive_power))	
+	return(list(s1, s2, s3, ts, gl, vl, gp))
 }
 
 plotData <- function() {
@@ -20,6 +21,7 @@ plotData <- function() {
 	ts <- data[[4]]
 	gl <- data[[5]]
 	vl <- data[[6]]
+	gp <- data[[7]]
 	
 	#png("plot4.png", width = 480, height = 480, units = "px")
 	
@@ -29,7 +31,8 @@ plotData <- function() {
 	lines(ts, s2, col = "red1")
 	lines(ts, s3, col = "blue")
 	legend('topright', c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, col=c('black', 'red', 'blue'))	
-	plot(ts, vl, type = "l", xlab = "datetime" , ylab = "Voltage")	
+	plot(ts, vl, type = "l", xlab = "datetime" , ylab = "Voltage")
+	plot(ts, gp, type = "l", xlab = "datetime" , ylab = "Global_reactive_power")	
 	#dev.off()
 }
 
