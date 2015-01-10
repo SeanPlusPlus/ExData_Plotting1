@@ -16,3 +16,5 @@ plotGlobalActivePowerWithTime <- function() {
 	plot(ts, gl, type = "l", xlab = "" , ylab = "Global Active Power (kilowats)")
 	dev.off()
 }
+
+plotGlobalActivePowerWithTime()
